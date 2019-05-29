@@ -44,7 +44,7 @@ export default {
 .md-card {
     height: fit-content;
     flex: 0 0 22%;
-    margin: 0 0 20px;
+    margin: 0 1% 20px;
 
     .md-card-header-text {
         display: flex;

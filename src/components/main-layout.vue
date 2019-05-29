@@ -11,9 +11,6 @@
         </transition-group>
       </md-app-content>
     </md-app>
-    <md-snackbar md-position="left" :md-active.sync="snackBarState" md-persistent>
-      <span>City not found</span>
-    </md-snackbar>
   </div>
 </template>
 
@@ -31,7 +28,7 @@ export default {
     methods: {
         ...mapActions(['fetchCityFromLocalStorage','updateWeather'])
     },
-    computed: mapGetters(['allCities','snackBarState']),
+    computed: mapGetters(['allCities']),
     created() {
         this.fetchCityFromLocalStorage();
         this.updateWeather();
@@ -53,7 +50,6 @@ export default {
 .animation-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   height: auto;
 }
 

@@ -26,8 +26,6 @@ const actions = {
                 } else if(!citiesFromStorage.includes(response.data.id.toString())) {
                     localStorage.setItem('cities', citiesFromStorage + ',' + response.data.id);
                 }
-            }).catch(e => {
-                commit('showSnackBar', true);
             });
 
     },
@@ -73,13 +71,7 @@ const mutations = {
         }
     },
     updateCitiesData: (state, updatedCities) => (state.cities = updatedCities),
-    removeProduct: (state, id) => (state.cities = state.cities.filter(city => city.id !== id)),
-    showSnackBar(state, uiState) {
-        state.snackBarState = uiState;
-        setTimeout(()=>{
-            state.snackBarState = !uiState;
-        }, 3000);
-    }
+    removeProduct: (state, id) => (state.cities = state.cities.filter(city => city.id !== id))
 };
 
 export default {
